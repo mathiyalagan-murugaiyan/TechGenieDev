@@ -1,6 +1,7 @@
 .card {
     height: auto; /* Change height to auto to accommodate varying content heights */
     color: white;
+    font-size: 11px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     display: flex;
@@ -8,13 +9,21 @@
     justify-content: space-between; /* Distribute space between elements */
 }
 
+.card-body{
+    height: 115.567px;
+    width: 204.483px;
+    padding: 4px;
+}
+
 .card-img-top {
     width: 100%;
-    height: 125px; /* Set a fixed height for the images */
+    height: 115px; /* Set a fixed height for the images */
     object-fit: cover; /* Maintain aspect ratio and cover the entire space */
 }
 
-.btn-outline-primary {
+.btn{
+    display: flex;
+    justify-content: center;
     text-align: center;
     transition: background-color 0.3s ease;
 }
