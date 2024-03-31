@@ -1,0 +1,15 @@
+.cardDesign{
+  margin-left: 0px;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 10px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .cardDesign {
+      margin-left: 0; /* Reset margin for smaller screens */
+  }
+}
