@@ -69,7 +69,7 @@ const cardData = [
 ];
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('HTML');
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);

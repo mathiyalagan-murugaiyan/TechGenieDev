@@ -1,29 +1,44 @@
 import React from 'react';
-import '../css/category.css'
+import '../css/category.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Category({ onSelectCategory }) {
-    const categories = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Python', 'SpringBoot', 'Django', 'API Design', 'Postman', 'CMD', 'Ethical Hacking', 'Digital Marketing', 'SEO', 'Notion']; // Add more categories as needed
+    const categories = [
+        'HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Python', 'SpringBoot',
+        'Django', 'API Design', 'Postman', 'CMD', 'Ethical Hacking', 'Digital Marketing',
+        'SEO', 'Notion'
+    ]; // Add more categories as needed
 
-return (
-    <div className="row justify-content-center mb-3">
-        <div className="col-md-12 text-center">
-            <div className="btn-group d-flex flex-wrap" role="group" aria-label="Course Categories">
-                {categories.map((category, index) => (
+    const itemsPerRow = 4; // Define the number of categories per row
+
+    const handleClick = (category) => {
+        onSelectCategory(category);
+    };
+
+    const rows = Math.ceil(categories.length / itemsPerRow); // Calculate the number of rows
+
+    const categoryRows = Array.from({ length: rows }, (_, rowIndex) => (
+        <div key={rowIndex} className="row">
+            {categories.slice(rowIndex * itemsPerRow, (rowIndex + 1) * itemsPerRow).map((category, index) => (
+                <div key={index} className="col-md-3 mb-3">
                     <button
-                    key={index}
-                    type="button"
-                    className="btn btn-outline-primary"
-                    onClick={() => onSelectCategory(category)}
+                        type="button"
+                        className="btn btn-outline-primary w-100"
+                        onClick={() => handleClick(category)}
                     >
-                    {category}
+                        {category}
                     </button>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
-    </div>
-);
+    ));
+
+    return (
+        <div className="container">
+            {categoryRows}
+        </div>
+    );
 }
 
 export default Category;
