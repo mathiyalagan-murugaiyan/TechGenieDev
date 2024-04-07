@@ -85,8 +85,10 @@ function App() {
             <SideNavbar />
           </div>
           <div className="col-md-10 cardDesign">
+          
             <Category onSelectCategory={handleCategorySelect} />
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2">
+          
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-2 mt-5">
             {filteredCards.map((cardData, index) =>(
                 <div key={index} className="col">
                   <CardDesign

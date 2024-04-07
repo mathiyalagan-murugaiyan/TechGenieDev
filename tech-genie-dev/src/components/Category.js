@@ -35,9 +35,11 @@ function Category({ onSelectCategory }) {
     ));
 
     return (
-        <div className="container">
-            {categoryRows}
-        </div>
+       <div className='hight-4'>
+         {categoryRows}
+       </div>
+          
+ 
     );
 }
 
